@@ -14,10 +14,21 @@
   border: 0.0625rem solid #c4c4c4;
   border-radius: 0.625rem;
   transition: all 0.3s;
+  position: relative;
 
   figure {
     display: flex;
     justify-content: center;
+  }
+
+  &-go-back-btn {
+    all: unset;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    background-color: #eeeeee;
+    border-radius: 0.625rem 0rem 0.625rem 0rem;
+    font-size: 0.8rem;
   }
 
   &-data {
@@ -38,7 +49,8 @@
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    padding: 3rem 1rem;
+    margin-top: 1rem;
+    background-color: #e9e9e9;
     transition: all 0.3s;
   }
 }

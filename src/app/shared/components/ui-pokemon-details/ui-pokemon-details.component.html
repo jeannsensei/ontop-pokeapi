@@ -1,5 +1,8 @@
 <section *ngIf="pokemonDetails" class="ui-pokemon-details-container">
   <article class="ui-pokemon-details">
+    <button routerLink="/" class="ui-pokemon-details-go-back-btn">
+      &crarr; go back to the list
+    </button>
     <figure>
       <img
         [src]="pokemonDetails.image"

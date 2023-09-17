@@ -16,3 +16,18 @@ export interface Pokemon {
   image: string;
   slug: string;
 }
+
+export type PokemonDetails = {
+  name: string;
+  image: string;
+  height: number;
+  weight: number;
+  types: Array<string>;
+  evolutionChain: Array<PokemonEvolutionChain>;
+};
+
+export type PokemonEvolutionChain = {
+  id: string;
+  name: string;
+  image: string;
+};

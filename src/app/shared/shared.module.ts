@@ -18,6 +18,7 @@ import { UiPokemonDetailsComponent } from './components/ui-pokemon-details/ui-po
     UiPokemonItemContainerComponent,
     UiPokemonItemComponent,
     ImageFallbackDirective,
+    UiPokemonDetailsComponent,
   ],
 })
 export class SharedModule {}

@@ -7,3 +7,20 @@
   gap: 1rem;
   padding: 0.5rem;
 }
+
+.ui-pokemon-item-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.prev-btn, .next-btn {
+  all: unset;
+  cursor: pointer;
+
+  &:hover {
+    color: #808080;
+  }
+}

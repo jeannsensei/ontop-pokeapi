@@ -1,5 +1,19 @@
 <section class="ui-pokemon-item-container">
+  <ng-container [ngTemplateOutlet]="pokemonListPagination" />
   <ng-container *ngFor="let pokemon of pokemonList$ | async">
     <app-ui-pokemon-item [pokemon]="pokemon" />
   </ng-container>
+  <ng-container [ngTemplateOutlet]="pokemonListPagination" />
 </section>
+
+<ng-template #pokemonListPagination>
+  <nav class="ui-pokemon-item-pagination" aria-label="Pagination">
+    <button class="prev-btn" (click)="prevPageHandler()" aria-label="Previous">
+      &laquo; Previous
+    </button>
+    {{ currentPage }}
+    <button class="next-btn" (click)="nextPageHandler()" aria-label="Next">
+      Next &raquo;
+    </button>
+  </nav>
+</ng-template>

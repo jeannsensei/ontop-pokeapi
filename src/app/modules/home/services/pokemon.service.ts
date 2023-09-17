@@ -26,9 +26,8 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
   getPokemonList(): Observable<Pokemon[]> {
-    // TODO: paginate - 1273
     return this.http
-      .get<PokemonListResponse>(`${environment.baseurl}/pokemon?limit=10`)
+      .get<PokemonListResponse>(`${environment.baseurl}/pokemon?limit=1273`)
       .pipe(map(this.getPokemonCompleteInfo));
   }
 

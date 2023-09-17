@@ -6,6 +6,7 @@ import { environment } from '../../../../environments/environment';
 import { Pokemon } from './../../../core/models/pokemon.interface';
 import { PokemonListResponse } from '../../../core/models/pokemon.interface';
 import { getPokemonIdFromUrl } from './utils/getPokemonIdFromUrl';
+import { stringToSlug } from 'src/app/shared/utils/stringToSlug';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +34,7 @@ export class PokemonService {
         id: pokemonId,
         name: pokemon.name,
         image: transformeSpriteUrl,
+        slug: stringToSlug(pokemon.name)
       };
     });
 

@@ -1,4 +1,8 @@
-<article class="ui-pokemon-item">
+<article
+  class="ui-pokemon-item"
+  [routerLink]="'detail/' + pokemon?.slug"
+  [queryParams]="{ id: pokemon?.id }"
+>
   <div class="ui-pokemon-item-notice">
     <p>see details</p>
   </div>

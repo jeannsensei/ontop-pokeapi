@@ -1,7 +1,14 @@
-import { createAction } from '@ngrx/store';
+import { Pokemon } from './../../core/models/pokemon.interface';
+import { createAction, props } from '@ngrx/store';
 
-const getPokemonList = createAction('[Pokemon List] Get Pokemon List');
+const loadingPokemonList = createAction('[Pokemon List] Loading Pokemon List State');
+
+const loadedPokemonList = createAction(
+  '[Pokemon List] Pokemon List Loaded',
+  props<{ pokemonListItems: Array<Pokemon> }>()
+);
 
 export const PokemonListActions = {
-  getPokemonList: getPokemonList,
+  loadingPokemonList,
+  loadedPokemonList,
 };

@@ -5,6 +5,7 @@ import { selectPokemonListLoading } from './../../../../state/selectors/pokemon-
 
 import { PokemonListActions } from '../../../../state/actions/pokemon-list.actions';
 import { AppState } from '../../../../state/app.state';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -14,10 +15,22 @@ import { AppState } from '../../../../state/app.state';
 export class PokemonListComponent implements OnInit {
   isLoading$: Observable<boolean> = new Observable();
 
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    private pokemonService: PokemonService
+  ) {}
 
   ngOnInit(): void {
     this.isLoading$ = this.store.select(selectPokemonListLoading);
-    this.store.dispatch(PokemonListActions.getPokemonList());
+
+    this.store.dispatch(PokemonListActions.loadingPokemonList());
+
+    this.pokemonService.getPokemonList().subscribe({
+      next: (pokemonListItems) => {
+        this.store.dispatch(
+          PokemonListActions.loadedPokemonList({ pokemonListItems })
+        );
+      },
+    });
   }
 }

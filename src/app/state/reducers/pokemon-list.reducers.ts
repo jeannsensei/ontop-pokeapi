@@ -10,7 +10,13 @@ export const initialState: PokemonListState = {
 
 export const pokemonListReducer = createReducer(
   initialState,
-  on(PokemonListActions.getPokemonList, (state): PokemonListState => {
-    return { ...state };
-  })
+  on(PokemonListActions.loadingPokemonList, (state): PokemonListState => {
+    return { ...state, isLoading: true };
+  }),
+  on(
+    PokemonListActions.loadedPokemonList,
+    (state, { pokemonListItems }): PokemonListState => {
+      return { ...state, isLoading: false, pokemonListItems };
+    }
+  )
 );

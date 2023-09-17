@@ -4,7 +4,7 @@ import { PokemonListState } from './../../core/models/pokemon-list.state';
 import { PokemonListActions } from '../actions/pokemon-list.actions';
 
 export const initialState: PokemonListState = {
-  isLoading: false,
+  isLoading: true,
   pokemonListItems: [],
 };
 

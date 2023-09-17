@@ -1,1 +1,3 @@
-<app-ui-pokemon-details></app-ui-pokemon-details>
+<ng-container *ngIf="isPokemonLoaded$ | async">
+  <app-ui-pokemon-details [pokemonDetails]="pokemonDetails" />
+</ng-container>

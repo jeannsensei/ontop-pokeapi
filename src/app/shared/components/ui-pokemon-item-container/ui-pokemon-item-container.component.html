@@ -1,0 +1,5 @@
+<section class="ui-pokemon-item-container">
+  <ng-container *ngFor="let pokemon of pokemonList$ | async">
+    <app-ui-pokemon-item [pokemon]="pokemon" />
+  </ng-container>
+</section>

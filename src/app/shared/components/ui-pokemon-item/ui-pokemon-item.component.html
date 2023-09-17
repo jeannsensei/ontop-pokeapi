@@ -1,0 +1,10 @@
+<article class="ui-pokemon-item">
+  <div class="ui-pokemon-item-notice">
+    <p>see details</p>
+  </div>
+  <figure>
+    <img [src]="pokemon?.image" [alt]="pokemon?.name" appImageFallback />
+  </figure>
+
+  <p>{{ pokemon?.name }}</p>
+</article>

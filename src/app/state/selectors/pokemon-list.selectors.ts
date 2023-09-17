@@ -6,10 +6,10 @@ export const selectPokemonList = (state: AppState) => state.pokemonList;
 
 export const selectPokemonListItems = createSelector(
   selectPokemonList,
-  (state) => state.pokemonListItems
+  state => state.pokemonListItems
 );
 
 export const selectPokemonListLoading = createSelector(
   selectPokemonList,
-  (state) => state.isLoading
+  state => state.isLoading
 );

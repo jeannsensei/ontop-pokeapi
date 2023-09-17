@@ -11,7 +11,7 @@ import { PokemonService } from '../../services/pokemon.service';
   selector: 'app-pokemon-list',
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonListComponent implements OnInit {
   isLoading$: Observable<boolean> = new Observable();
@@ -27,7 +27,7 @@ export class PokemonListComponent implements OnInit {
     this.store.dispatch(PokemonListActions.loadingPokemonList());
 
     this.pokemonService.getPokemonList().subscribe({
-      next: (pokemonListItems) => {
+      next: pokemonListItems => {
         this.store.dispatch(
           PokemonListActions.loadedPokemonList({ pokemonListItems })
         );

@@ -10,7 +10,7 @@ import { selectPokemonListItems } from 'src/app/state/selectors/pokemon-list.sel
   selector: 'app-ui-pokemon-item-container',
   templateUrl: './ui-pokemon-item-container.component.html',
   styleUrls: ['./ui-pokemon-item-container.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiPokemonItemContainerComponent implements OnInit {
   pokemonList$: Observable<Pokemon[]> = new Observable();

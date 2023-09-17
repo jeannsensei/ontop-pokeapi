@@ -4,12 +4,14 @@ import { UiPokemonItemComponent } from './components/ui-pokemon-item/ui-pokemon-
 import { UiPokemonItemContainerComponent } from './components/ui-pokemon-item-container/ui-pokemon-item-container.component';
 import { ImageFallbackDirective } from './directives/image-fallback.directive';
 import { RouterModule } from '@angular/router';
+import { UiPokemonDetailsComponent } from './components/ui-pokemon-details/ui-pokemon-details.component';
 
 @NgModule({
   declarations: [
     UiPokemonItemComponent,
     UiPokemonItemContainerComponent,
     ImageFallbackDirective,
+    UiPokemonDetailsComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [

@@ -1,10 +1,9 @@
 <article
   class="ui-pokemon-item"
   [routerLink]="'detail/' + pokemon?.slug"
-  [queryParams]="{ id: pokemon?.id }"
->
+  [queryParams]="{ id: pokemon?.id }">
   <div class="ui-pokemon-item-notice">
-    <p>see details</p>
+    <p>See details</p>
   </div>
   <figure>
     <img [src]="pokemon?.image" [alt]="pokemon?.name" appImageFallback />

@@ -24,7 +24,7 @@ export class PokemonService {
   private getPokemonCompleteInfo(
     response: PokemonListResponse
   ): Array<Pokemon> {
-    const pokemonList = response.results.map((pokemon) => {
+    const pokemonList = response.results.map(pokemon => {
       const pokemonId = getPokemonIdFromUrl(pokemon.url);
       const transformeSpriteUrl = environment.spriteBaseurl.replace(
         /{{(.*?)}}/,
@@ -34,10 +34,16 @@ export class PokemonService {
         id: pokemonId,
         name: pokemon.name,
         image: transformeSpriteUrl,
-        slug: stringToSlug(pokemon.name)
+        slug: stringToSlug(pokemon.name),
       };
     });
 
     return pokemonList;
+  }
+
+  getPokemonDetails(id: string) {
+    console.log(id);
+    // use forkJoin
+    // need to use https://pokeapi.co/api/v2/pokemon/1/ and  https://pokeapi.co/api/v2/evolution-chain/1/
   }
 }

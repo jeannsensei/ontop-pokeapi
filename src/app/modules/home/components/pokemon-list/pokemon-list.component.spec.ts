@@ -8,9 +8,8 @@ describe('PokemonListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PokemonListComponent ]
-    })
-    .compileComponents();
+      declarations: [PokemonListComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonListComponent);
     component = fixture.componentInstance;

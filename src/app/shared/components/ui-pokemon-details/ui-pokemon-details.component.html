@@ -1,5 +1,39 @@
-<section *ngIf="pokemonDetails">
-  <div>
-    {{ pokemonDetails.name }}
-  </div>
+<section *ngIf="pokemonDetails" class="ui-pokemon-details-container">
+  <article class="ui-pokemon-details">
+    <figure>
+      <img
+        [src]="pokemonDetails.image"
+        [alt]="pokemonDetails.name"
+        appImageFallback />
+    </figure>
+
+    <div class="ui-pokemon-details-data">
+      <h1 class="ui-pokemon-details-name">{{ pokemonDetails.name }}</h1>
+      <h4>Height: {{ pokemonDetails.height / 10 }}m</h4>
+      <h4>Weight: {{ pokemonDetails.weight / 10 }}kg</h4>
+      <div class="ui-pokemon-details-types">
+        <span class="pill-type" *ngFor="let type of pokemonDetails.types">
+          {{ type }}
+        </span>
+      </div>
+
+      <div class="ui-pokemon-details-evolutions">
+        <div
+          class="pokemon-evolution"
+          *ngFor="let pokemon of pokemonDetails.evolutionChain; last as isLast">
+          <h3>{{ pokemon.name }}</h3>
+          <figure class="pokemon-evolution-chain-img">
+            <img [src]="pokemon.image" [alt]="pokemon.name" appImageFallback />
+          </figure>
+          <span class="pokemon-evolution-chain-arrow" *ngIf="!isLast">
+            &rarr;
+          </span>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section *ngIf="!pokemonDetails" class="ui-pokemon-details-container">
+  Loading pokemon...
 </section>

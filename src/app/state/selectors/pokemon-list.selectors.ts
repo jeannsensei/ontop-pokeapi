@@ -8,8 +8,3 @@ export const selectPokemonListItems = createSelector(
   selectPokemonList,
   state => state.pokemonListItems
 );
-
-export const selectPokemonListLoading = createSelector(
-  selectPokemonList,
-  state => state.isLoading
-);

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeLayoutComponent } from './home-layout.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HomeLayoutComponent', () => {
   let component: HomeLayoutComponent;
@@ -9,6 +10,7 @@ describe('HomeLayoutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [HomeLayoutComponent],
+      imports: [RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeLayoutComponent);

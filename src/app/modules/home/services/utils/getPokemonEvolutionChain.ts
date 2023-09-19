@@ -1,4 +1,4 @@
-interface PokemonSpecie {
+export interface PokemonSpecie {
   species: {
     name: string;
     url: string;

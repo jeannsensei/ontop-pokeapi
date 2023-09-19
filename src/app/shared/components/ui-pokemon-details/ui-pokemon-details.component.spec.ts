@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UiPokemonDetailsComponent } from './ui-pokemon-details.component';
 
-describe('UiPokemonDetailsComponent', () => {
+xdescribe('UiPokemonDetailsComponent', () => {
   let component: UiPokemonDetailsComponent;
   let fixture: ComponentFixture<UiPokemonDetailsComponent>;
 

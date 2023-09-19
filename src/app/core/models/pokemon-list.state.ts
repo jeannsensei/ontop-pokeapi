@@ -1,6 +1,6 @@
 import { Pokemon } from './pokemon.interface';
 
 export interface PokemonListState {
-  isLoading: boolean;
+  isLoaded: boolean;
   pokemonListItems: Array<Pokemon>;
 }

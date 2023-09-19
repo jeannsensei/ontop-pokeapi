@@ -18,8 +18,6 @@ export class PokemonListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.store.dispatch(PokemonListActions.loadingPokemonList());
-
     this.pokemonService.getPokemonList().subscribe({
       next: pokemonListItems => {
         this.store.dispatch(

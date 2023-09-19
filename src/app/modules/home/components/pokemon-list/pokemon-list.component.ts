@@ -24,6 +24,9 @@ export class PokemonListComponent implements OnInit {
           PokemonListActions.loadedPokemonList({ pokemonListItems })
         );
       },
+      error: err => {
+        console.error(err);
+      },
     });
   }
 }

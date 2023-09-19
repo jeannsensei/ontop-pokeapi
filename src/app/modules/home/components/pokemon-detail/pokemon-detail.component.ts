@@ -42,13 +42,18 @@ export class PokemonDetailComponent implements OnInit {
   }
 
   getPokemonDetails(id: string): void {
-    this.pokemonService.getPokemonDetails(id).subscribe(pokemonDetails => {
-      this.pokemonDetails = pokemonDetails;
-      this.store.dispatch(
-        PokemonDetailActions.setLoadingPokemonDetail({
-          isPokemonLoaded: true,
-        })
-      );
+    this.pokemonService.getPokemonDetails(id).subscribe({
+      next: pokemonDetails => {
+        this.pokemonDetails = pokemonDetails;
+        this.store.dispatch(
+          PokemonDetailActions.setLoadingPokemonDetail({
+            isPokemonLoaded: true,
+          })
+        );
+      },
+      error: err => {
+        console.error(err);
+      },
     });
   }
 }

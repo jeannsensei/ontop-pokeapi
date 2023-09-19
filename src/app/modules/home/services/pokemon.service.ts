@@ -1,4 +1,12 @@
-import { Observable, forkJoin, map, mergeMap, of } from 'rxjs';
+import {
+  Observable,
+  catchError,
+  forkJoin,
+  map,
+  mergeMap,
+  of,
+  throwError,
+} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
@@ -28,7 +36,12 @@ export class PokemonService {
   getPokemonList(): Observable<Pokemon[]> {
     return this.http
       .get<PokemonListResponse>(`${environment.baseurl}/pokemon?limit=1273`)
-      .pipe(map(this.getPokemonCompleteInfo));
+      .pipe(
+        map(this.getPokemonCompleteInfo),
+        catchError(error => {
+          return throwError(() => error);
+        })
+      );
   }
 
   private getPokemonCompleteInfo(
@@ -68,7 +81,10 @@ export class PokemonService {
       mergeMap(pokemonEvChainResponse => {
         return forkJoin([of(pokemonDetails), of(pokemonEvChainResponse)]);
       }),
-      map(this.getTransformedPokemonDetails)
+      map(this.getTransformedPokemonDetails),
+      catchError(error => {
+        return throwError(() => error);
+      })
     );
   }
 

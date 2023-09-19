@@ -1,6 +1,7 @@
 # Ontop PokeApi Challenge
 
 This PokeApi Challenge was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.9.
+
 See the project live: [ontop-pokeapi-challenge.netlify.app](https://ontop-pokeapi-challenge.netlify.app)
 
 ## Installation

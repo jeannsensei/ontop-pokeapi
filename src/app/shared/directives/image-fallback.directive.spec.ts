@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
+
 import { ImageFallbackDirective } from './image-fallback.directive';
 import { SharedModule } from '../shared.module';
-import { By } from '@angular/platform-browser';
 
 @Component({
   template: ` <img appImageFallback src="invalid-url" alt="Fallback Image" /> `,

@@ -1,4 +1,11 @@
 import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { environment } from '../../../../environments/environment';
+
+import {
   expectedPokemonDetailsResponse,
   getPokemonDetailsMockResponse,
   getPokemonListMockExpectedResponse,
@@ -6,14 +13,7 @@ import {
   mockPokemonSpeciesMockResponse,
   pokemonEvolutionChainMockResponse,
 } from './../../../mocks/pokemon.service.mocks';
-import { TestBed } from '@angular/core/testing';
-
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
 import { PokemonService } from './pokemon.service';
-import { environment } from '../../../../environments/environment';
 
 describe('PokemonService', () => {
   let service: PokemonService;

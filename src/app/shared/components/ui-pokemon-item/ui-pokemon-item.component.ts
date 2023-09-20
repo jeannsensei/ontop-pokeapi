@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Pokemon } from 'src/app/core/models/pokemon.interface';
 
+import { Pokemon } from '../../../core/models/pokemon.interface';
 @Component({
   selector: 'app-ui-pokemon-item',
   templateUrl: './ui-pokemon-item.component.html',

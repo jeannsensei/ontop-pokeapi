@@ -1,17 +1,17 @@
-import { AppState, ROOT_REDUCERS } from './../../../../state/app.state';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PokemonDetailComponent } from './pokemon-detail.component';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { UiPokemonDetailsComponent } from 'src/app/shared/components/ui-pokemon-details/ui-pokemon-details.component';
-import { Store, StoreModule } from '@ngrx/store';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { provideMockStore } from '@ngrx/store/testing';
-import { BehaviorSubject, of } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BehaviorSubject, of } from 'rxjs';
+import { Store, StoreModule } from '@ngrx/store';
+import { provideMockStore } from '@ngrx/store/testing';
+
+import { AppState, ROOT_REDUCERS } from './../../../../state/app.state';
+import { PokemonDetailComponent } from './pokemon-detail.component';
+import { SharedModule } from '../../../../shared/shared.module';
+import { UiPokemonDetailsComponent } from '../../../../shared/components/ui-pokemon-details/ui-pokemon-details.component';
 import { PokemonService } from '../../services/pokemon.service';
-import { expectedPokemonDetailsResponse } from 'src/app/mocks/pokemon.service.mocks';
+import { expectedPokemonDetailsResponse } from '../../../../mocks/pokemon.service.mocks';
 
 const initialState: AppState = {
   pokemonDetail: { isPokemonLoaded: true },

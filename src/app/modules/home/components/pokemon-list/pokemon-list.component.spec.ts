@@ -1,8 +1,8 @@
+import { of } from 'rxjs';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { Store, StoreModule } from '@ngrx/store';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
 import { provideMockStore } from '@ngrx/store/testing';
-import { ActivatedRoute, convertToParamMap } from '@angular/router';
 
 import { AppState, ROOT_REDUCERS } from './../../../../state/app.state';
 

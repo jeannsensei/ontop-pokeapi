@@ -3,8 +3,8 @@ import { Store } from '@ngrx/store';
 import { Observable, map } from 'rxjs';
 
 import { Pokemon } from './../../../core/models/pokemon.interface';
-import { AppState } from 'src/app/state/app.state';
-import { selectPokemonListItems } from 'src/app/state/selectors/pokemon-list.selectors';
+import { AppState } from '../../../state/app.state';
+import { selectPokemonListItems } from '../../../state/selectors/pokemon-list.selectors';
 
 @Component({
   selector: 'app-ui-pokemon-item-container',

@@ -14,6 +14,7 @@ import {
   pokemonEvolutionChainMockResponse,
 } from './../../../mocks/pokemon.service.mocks';
 import { PokemonService } from './pokemon.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('PokemonService', () => {
   let service: PokemonService;
@@ -48,6 +49,19 @@ describe('PokemonService', () => {
     req.flush(getPokemonListMockResponse);
   });
 
+  it('should throw an error when retrieving a list of Pokemon', () => {
+    service.getPokemonList().subscribe({
+      error: error => {
+        expect(error instanceof HttpErrorResponse).toBe(true);
+      },
+    });
+
+    const req = controller.expectOne(
+      `${environment.baseurl}/pokemon?limit=1273`
+    );
+    req.flush(null, { status: 500, statusText: 'Internal Server Error' });
+  });
+
   it('should return the pokemon details', () => {
     const fakePokemonId = '1';
     service.getPokemonDetails('1').subscribe(transformedPokemonDetails => {
@@ -72,5 +86,16 @@ describe('PokemonService', () => {
     );
     expect(pokemonEvolutionChainReq.request.method).toBe('GET');
     pokemonEvolutionChainReq.flush(pokemonEvolutionChainMockResponse);
+  });
+
+  it('should throw an error when retrieving the pokemon details', () => {
+    service.getPokemonDetails('1').subscribe({
+      error: error => {
+        expect(error instanceof HttpErrorResponse).toBe(true);
+      },
+    });
+
+    const req = controller.expectOne(`${environment.baseurl}/pokemon/1`);
+    req.flush(null, { status: 500, statusText: 'Internal Server Error' });
   });
 });

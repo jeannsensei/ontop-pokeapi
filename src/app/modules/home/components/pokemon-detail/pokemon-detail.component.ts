@@ -34,7 +34,8 @@ export class PokemonDetailComponent implements OnInit {
 
   checkRouteId(params: Params) {
     const { id } = params;
-    if (!Number(id)) {
+    const isNumber = Number(id);
+    if (!isNumber) {
       this.router.navigate(['/']);
       return;
     }
